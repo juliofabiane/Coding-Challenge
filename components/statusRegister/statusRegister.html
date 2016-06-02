@@ -16,19 +16,19 @@
                 </ul>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form ng-submit="register(status)">
+                        <form name="statusForm" ng-submit="register(status)">
                             <div class="form-group">
                                 <label for="user">User</label>
-                                <select id="user" class="form-control" ng-model="status.user">
+                                <select id="user" class="form-control" ng-model="status.user" required="true">
                                     <option ng-repeat="user in userList" value="{{user.id}}" ng-bind="user.name"></option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="status">Status</label>
-                                <textarea ng-model="status.text" id="status" class="form-control"></textarea>
+                                <textarea ng-model="status.text" id="status" class="form-control" required="true"></textarea>
                             </div>
                             <div class="text-right">
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success" ng-disabled="statusForm.$invalid">Submit</button>
                             </div>
                         </form>
                     </div>
