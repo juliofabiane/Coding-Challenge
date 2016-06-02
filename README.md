@@ -6,11 +6,12 @@ Coding Challenge for Coderocrk
 	npm
 
 ## Baixar o Repositório
-	###SSH: 
-		git clone git@github.com:juliofabiane/CodingChallenge.git
+	SSH: 
+	git clone git@github.com:juliofabiane/CodingChallenge.git
+	
 	Ou
-	###HTTPS: 
-		git clone https://github.com/juliofabiane/CodingChallenge.git
+	HTTPS: 
+	git clone https://github.com/juliofabiane/CodingChallenge.git
 	
 	cd CodingChallenge
 
@@ -20,8 +21,3 @@ Coding Challenge for Coderocrk
 	gulp
 	
 	http://localhost:3000
-	
-
-	
-
-
