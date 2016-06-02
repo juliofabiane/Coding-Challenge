@@ -13,7 +13,6 @@ gulp.task('libs', function() {
         "node_modules/angular-resource/angular-resource.js",
         "node_modules/angular-sanitize/angular-sanitize.js",
         "node_modules/angular-touch/angular-touch.js",
-        "node_modules/angular-ui-mask/dist/mask.min.js",
         "node_modules/angular-messages/angular-messages.js",
     	"node_modules/ngstorage/ngStorage.js",        
     	"node_modules/angular-ui-router/release/angular-ui-router.js",

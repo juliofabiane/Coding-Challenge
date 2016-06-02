@@ -11,7 +11,6 @@ var Config = (function () {
 			'ngSanitize',
             'ngTouch',
 			'ngMessages',
-			'ui.mask',
 			'ui.router',
 			'ui.bootstrap',
 			'toaster',
