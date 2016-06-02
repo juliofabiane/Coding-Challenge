@@ -22,27 +22,28 @@ function StatusListConfig($stateProvider) {
 		});
 };
 
-function StatusListController($scope, $state, Status, Friends, toaster) {	
+function StatusListController($scope, $state, Status, Friends, toaster) {
 	/**
 	 * $scope.init
 	 * Function is executed when the page loads
 	 */
 	$scope.init = function () {
-		loadStatusList();
-		loadFriends(20, 1);
+		var pageSize = 30;
+		var page = 1;		
 		$scope.users = [];
+		loadStatusList(pageSize, page);
+		loadFriends(pageSize, page);		
 	}
-	
+
 	/**
 	 * loadStatusList
 	 * Loads the status list and the user
 	 */
-	function loadStatusList() {
-		Status.query(function (response) {
-			$scope.statusList = response.data;
+	function loadStatusList(pageSize, page) {
+		Status.query({ 'pageSize': pageSize, page: page }, function (response) {
+			$scope.statusList = response.data;		
 			
 			/**
-			 * Percorre a lista de status e busca o usuário
 			 * Walks the status list and finds the user
 			 */
 			for (var i = 0; i < $scope.statusList.length; i++) {
@@ -59,13 +60,13 @@ function StatusListController($scope, $state, Status, Friends, toaster) {
 						})
 					});
 				}
-			}			
+			}
 		}, function (error) {
 			toaster.pop("error", "Error", "Could not load the status list.");
 			console.log(error);
 		});
 	}
-	
+
 	/**
 	 * loadFriends
 	 * Loads the list of friends  
@@ -79,5 +80,5 @@ function StatusListController($scope, $state, Status, Friends, toaster) {
 			toaster.pop("error", "Error", "Could not load friends.");
 			console.log(error);
 		});
-	}
+	}	
 }
