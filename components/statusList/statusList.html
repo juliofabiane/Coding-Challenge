@@ -1,0 +1,59 @@
+<div class="col" ng-init="init()">
+    <div class="bg-light lter b-b wrapper-md">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <h1 class="m-n font-thin h3 text-black">News Feed</h1>
+                <small class="text-muted">A news feed that shows you what your friends have been doing recently</small>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-md">
+        <div class="row">
+            <div class="hbox hbox-auto-xs hbox-auto-sm">
+                <div class="col">
+                    <div class="padder">
+                        <div class="m-l-lg">
+                            <a ui-sref="layout.statusRegister" class="btn btn-success m-l-lg">New Status</a>
+                        </div>
+                        <div class="streamline b-l b-info m-l-lg m-b padder-v" ng-init="loadStatus()">
+                            <div ng-repeat="status in statusList" ng-if="status.text">
+                                <span class="pull-left thumb-sm avatar m-l-n-md">                            
+                                    <img ng-src="{{users[status.user].avatar}}" alt="{{users[status.user].name}}">                                    
+                                </span>
+                                <div class="m-l-lg panel b-a">
+                                    <div class="panel-heading pos-rlt b-b b-light">
+                                        <span class="arrow left"></span>
+                                        <span class="h4" ng-bind="users[status.user].name"></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <blockuote>
+                                            <p ng-bind="status.text"></p>
+                                        </blockuote>
+                                        <a ui-sref="layout.statusRegister({'id': status.id})" class="btn btn-default btn-sm">Update Status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col w-lg bg-light lter b-l bg-auto">
+                    <div class="wrapper">
+                        <div>
+                            <h4>Friends</h4>
+                            <ul class="list-group no-bg no-borders pull-in">
+                                <li ng-repeat="friend in friendList" class="list-group-item m-b">
+                                    <span class="pull-left thumb-sm avatar m-r">
+                                        <img ng-src="{{friend.avatar}}" alt="{{friend.name}}">
+                                    </span>
+                                    <div class="clear m-t-xs">
+                                        <span class="h4" ng-bind="friend.name"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

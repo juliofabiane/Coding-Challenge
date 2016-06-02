@@ -1,0 +1,39 @@
+<div class="col" ng-init="init()">
+    <div class="bg-light lter b-b wrapper-md">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <h1 class="m-n font-thin h3 text-black" ng-bind="title"></h1>
+                <small class="text-muted" ng-bind="subtitle"></small>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-md">
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="breadcrumb bg-white b-a">
+                    <li><a ui-sref="layout.statusList"><i class="fa fa-home"></i> News Feed</a></li>
+                    <li class="active">News Feed</li>
+                </ul>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form ng-submit="register(status)">
+                            <div class="form-group">
+                                <label for="user">User</label>
+                                <select id="user" class="form-control" ng-model="status.user">
+                                    <option ng-repeat="user in userList" value="{{user.id}}" ng-bind="user.name"></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <textarea ng-model="status.text" id="status" class="form-control"></textarea>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
