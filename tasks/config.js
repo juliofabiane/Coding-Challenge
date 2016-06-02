@@ -1,3 +1,3 @@
 module.exports = {
-    uglifyJS: false
+    uglifyJS: true
 };
