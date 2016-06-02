@@ -1,4 +1,4 @@
-# Coding-Challenge
+# CodingChallenge
 Coding Challenge for Coderocrk
 
 ## Dependências
